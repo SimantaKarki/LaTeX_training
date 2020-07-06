@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,esint}
+
+\title{Assignment}
+\author{Simanta Karki}
+\date{june 9 2020}
+
+\begin{document}
+
+\maketitle
+\textbf{Chapter 1}
+\vspace{2cm}
+\textbf{Typesetting math}
+\vspace{1cm}
+
+\section{Typesetting types}
+
+$$\frac{x^n-1}{x-1} = \sum_{k=0}^n-1x^k$$
+
+\section{Fraction}
+$$\frac{a/b-c/d}{e/f-g/h}$$
+
+\section{Root}
+$$\sqrt{2}$$
+$$\sqrt[3]{8}$$
+$$\sqrt[2]{2},\sqrt[3]{8}\sqrt[4]{16},\sqrt[n]{x}$$
+$$\sqrt{2+\sqrt{2+\sqrt{2+...}}}$$
+
+\section{Square}
+$$(a+b)^2 = a^2 + b^2 + 2ab$$
+
+\section{Integral}
+$$y_D = Z_c$$
+$$\int_v$$
+$$\int_{a}^{b}\int_{c}^{d}\int_{e}^{f}f(xyz) dxdydz$$
+$$\oint$$
+$$\oiint$$
+$$\iiint$$
+$$\overrightarrow{a}\cdot\overrightarrow{b} = 0$$
+
+\section{Sum Integral Limit}
+$$\sum_{k=0}^\infty\frac{(-1)^k}{k+1} = \int_0^1\frac{dx}{1+x}$$
+$$\lim_{x\xrightarrow0}\frac{\sin x}{x}$$
+
+\section{Differential Equation}
+$$\frac{d^2y}{dx^2}+5\frac{dy}{dx}+6=0$$
+$$\frac{d^2y}{dx^2}+5\frac{dy}{dx}+6=2e^{ax}\sin{bx}$$
+$$\frac{d^3y}{dx^3}+8\frac{d^2x}{dx^2}+5\frac{dy}{dx}+6=2e^{ax}\cos{bx}$$
+$$\frac{d^2y}{dx^2}=-\frac{y^3}{x^3}$$
+
+\section{Diode Equation}
+\begin{eqnarray}
+i_D = I_s(e^\frac{v_{D}}{\eta.V_{T}}-1)\\
+V_{D2}-V_{D1} = 2.303\eta V_T\ln(\frac{I_{D2}}{I_{D1}})
+\end{eqnarray}
+\section{Integral}
+\subsection{Line Integral}
+\begin{eqnarray}
+\int_{a}^{b}f(x)d(x)\\
+\int_{x_1}^{x_2}f(x)d(x)
+\end{eqnarray}
+
+\subsection{Surface Integral}
+\begin{eqnarray}
+\iint_Sf(x,y)dxdy\\
+\oiint_S f(x,y)dxdy\\
+\int_{x_1}^{x_2}\int_{y_1}^{y_2}f(x,y)dxdy
+\end{eqnarray}
+
+\subsection{Volume Integral}
+\begin{eqnarray}
+\iiint_Vf(x,y,z)dxdydz\\
+\int_{x_1}^{x_2}\int_{y_1}^{y_2}\int_{z_1}^{z_2}f(x,y,z)dxdydz
+\end{eqnarray}
+
+\subsection{Fourier Integral}
+\begin{eqnarray}
+f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty}F(s)e^{j\omega t}dt
+\end{eqnarray}
+
+\subsection{Fourier Transform}
+\begin{eqnarray}
+f(s) = \int_{-\infty}^{\infty}F(t)e^{-j\omega t}dt
+\end{eqnarray}
+
+\subsection{Inverse Laplace Transform}
+\begin{eqnarray}
+f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty}F(s)e^{st}dt
+\end{eqnarray}
+
+\subsection{Laplace Transform}
+\begin{eqnarray}
+F(s) = \int_{-\infty}^{\infty}f(t)e^{-st}dt
+\end{eqnarray}
+
+\section{Maxwells Equations}
+\begin{eqnarray}
+\overrightarrow{\nabla}\cdot\overrightarrow{E} = \frac{\rho}{\varepsilon_0}\\
+\overrightarrow{\nabla}\cdot\overrightarrow{B} = 0\\
+\overrightarrow{\nabla}\times\overrightarrow{E} = -\frac{B}{\delta t}\\
+\overrightarrow{\nabla}\times\overrightarrow{E} = -\mu_0(J + \varepsilon_0\frac{dE}{dt}) 
+\end{eqnarray}
+
+\textbf{Integral Form of Maxwell's Equation}
+\begin{eqnarray}
+\int\overrightarrow{E}\cdot\overrightarrow{dl} = 0\\
+\int_S\overrightarrow{B}\cdot\overrightarrow{ds} = 0 
+\end{eqnarray}
+
+\section{Vectors}
+\begin{eqnarray}
+\overrightarrow{F} = 3\overrightarrow{a_x}+4\overrightarrow{a_y} + 7\hat{a_z}
+\end{eqnarray}
+
+\section{Accents in \LaTeX}
+\begin{center}
+\'{u}\\
+\"{u}\\
+\v{u}\\
+\d{u}\\
+\`{u}\\
+\={u}\\
+\H{u}\\
+\b{u}\\
+\^{u}\\
+\.{u}\\
+\t{uu}\\
+\r{u}\\
+\~{u}\\
+\u{u}\\
+\c{u}
+\end{center}
+\end{document}

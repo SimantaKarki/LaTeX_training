@@ -1,0 +1,44 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{devanagari}
+\usepackage{subcaption}
+
+\title{figures n beamer}
+\author{bikash.chawal }
+\date{June 2020}
+
+\begin{document}
+\listoffigures
+\maketitle
+
+\chapter{Introduction}
+Bhaktapur Durbar Square, (Nepal Bhasa: Devanagari :),the royal palace of the old Bhaktapur Kingdom, 1,400 metres (4,600 ft) above sea level.[1] It is a UNESCO World Heritage Site.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{kalinchowk.jpg}
+    \caption{Bhaktapur Durbar Square}
+    \label{dsquare}
+\end{figure}
+The fig \ref{dsquare} shows the palace courtyard.The Bhaktapur Durbar Square is located in the current town of Bhaktapur, also known as Khwopa,[1] which lies 13 km east of Kathmandu. While the complex consists of at least four distinct squares (Durbar Square, Taumadhi Square, Dattatreya Square and Pottery Square),[2] the whole area is informally known as the Bhaktapur Durbar Square and is a highly visited site in the Kathmandu Valley.
+\begin{figure}
+  \centering
+    \begin{subfigure}[b]{0.8\textwidth}
+       \centering
+    \includegraphics[width=0.5\textwidth]{kalinchowk.jpg}
+    \caption{dsquare1}
+    \label{d1}
+    \end{subfigure}
+    %\centering
+    \begin{subfigure}[b]{0.8\textwidth}
+     \centering
+    \includegraphics[width=0.5\textwidth]{kalinchowk.jpg}
+    \caption{dsquare2}
+    \label{d2}
+    \end{subfigure}
+    \caption{sub figure}
+\end{figure}
+
+
+
+\end{document}

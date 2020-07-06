@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\usepackage{color}
+\usepackage{enumerate}
+\begin{document}
+\section{font famlily}
+\textit{word in italics}\\
+\textsl{words slanted}\\
+\textbf{words in bold}\\
+\\textsf{this is sanserif and \textbf{this is bold\textit{ also with italics}}}\\
+
+\section{font size}
+{\tiny tiny words}\\
+{\large large words}\\
+{\Large Large words}\\
+{\LARGE LARGE words}\\
+
+\section{color}
+{\color{red} This is red text}
+
+\section{listing}
+\subsection{numbering}
+\begin{enumerate}
+\item The first item
+\item this is second item
+\item Hello
+\end{enumerate}
+
+\subsection{bullets}
+\begin{itemize}
+\item The first item
+\item this is second item
+\item Hello
+\end{itemize}
+
+\subsection{list in list}
+\begin{itemize}
+\item The first item
+\item this is second item
+\begin{enumerate}
+\item The first item
+\item this is second item
+\item Hello
+\end{enumerate}
+\item Hello
+\end{itemize}
+
+\subsection{userdefined list}
+\begin{enumerate}[step 1]
+\item The first item
+\item this is second item
+\item Hello
+\end{enumerate}
+
+\section{Table}
+\begin{tabular}{|c|c|}
+\hline 
+s.n & name \\ 
+\hline 
+1 & ram \\ 
+\hline 
+2 & shyam \\ 
+\hline 
+4 & hari \\ 
+\hline 
+\end{tabular} \\
+
+\begin{tabular}{|c|c|c|}
+\hline 
+\multicolumn{2}{|c|}{Title} & Name \\ 
+\hline 
+1 & Er. & Ram \\ 
+\hline 
+2 & Er. & Hari \\ 
+\hline 
+3 & Er. & Shyam \\ 
+\hline 
+\end{tabular} 
+
+\center
+\begin{tabular}{l|ccc}
+&\multicolumn{3}{c}{year} \\ 
+\cline{2-4} 
+City & 2006 & 2007 & 2008 \\ 
+\hline 
+London & 123 & 456 & 789 \\ 
+
+Berlin & 234 & 567 & 890 \\ 
+
+paris & 12 & 34 & 56 \\ 
+
+\end{tabular} 
+
+
+\end{document}
