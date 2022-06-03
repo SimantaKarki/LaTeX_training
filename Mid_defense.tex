@@ -1,0 +1,234 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+
+%\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 %cm}{1.5 cm}
+
+
+\begin{document}
+\begin{titlepage}
+
+
+\centering
+\large\textbf{PURBANCHAL UNIVERSITY}
+\begin{center}
+\includegraphics[width=30mm,height=30mm]{khwopa.jpeg}
+\end{center}
+\large\textbf{DEPARTMENT OF COMPUTER ENGINEERING
+\\ KHWOPA ENGINEERING COLLEGE \\ LIBALI-2 BHAKTAPUR}
+\\
+[0.5cm]
+\large\textbf{A Project Proposal \\ON\\ Nepali AI Sallakar}
+
+A Mid-Defense Project Proposal submitted for the partial fulfillment of requirements for the degree of
+Bachelor of Engineering in Computer Engineering (Eighth Semester)
+\\
+[1.5cm]
+\large\textbf{Submitted By}\\
+Krishnadev Adhikari Danuwar (740318) \\
+Kushal Badal (740320)\\
+Simanta Karki (740341)\\
+Sirish Titaju (740342)\\
+Swostika Shrestha (740348)\\
+\date{June 2022}
+\end{titlepage}
+\pagebreak
+\begin{center}
+    \section*{ABSTRACT}
+\end{center}
+This project is about how Artificial Intelligence (AI) can be used to classify the different age
+group using speech signal. Age estimation based on human’s speech features is an interesting
+subject in Automatic Speech Recognition (ASR) systems. In age estimation, like other speech
+processing systems, we encounter with two main challenges: finding an appropriate procedure
+for feature extraction, and selecting a reliable method for pattern classification. In this project
+we propose to use linear predictive coding (LPC) and Mel Frequency Cepstral Coefficient
+(MFCC) for feature extraction. And we propose to use support vector machine (SVM),
+Recurrent Neural Network (RNN) and Convolution Neural Network (CNN) for age
+classification purpose. We propose to define 4 age groups of Nepali speakers. Furthermore, we
+use this model in recommendation system.
+Keywords: Mel Frequency Cepstral Coefficient (MFCC), Tacotron, Fast Fourier Transform,
+Gaussian Mixture Model, LPC.
+\pagebreak
+
+\tableofcontents
+\pagebreak
+\pagenumbering{roman}
+\begin{center}
+    \section*{Chapter 1 \\ INTRODUCTION}
+\end{center}
+\addtocounter{section}{1}
+\subsection{Background}
+{The emerging growth of technology and the increasing computational power of computer
+systems have given rise to the ever-growing dream of Artificial Intelligence to reality. This
+project is about how Artificial Intelligence (AI) can used to simplify the work of content
+presenter. The technology works closely with speech/voice recognition and text recognition
+engines. Voice recognition technology is the most potential technology that will make our daily
+lives more secure. It is one of the types of biometrics that is used to identify and authenticate
+user on the basis of his/her voice. Nowadays, automatic gender classification is playing a vital
+role in many ways in many fields. Gender of a person plays a significant role in our day-to-day
+interactions with computers and society. As gender possesses distinguished information
+concerning social activities, automatic gender classification is receiving increasing attention.
+Most of these voice detection systems detect voice by reading word sequencing. This project
+makes a voice classification application based on wave frequency of a person voice. This
+application can automatically detect the gender using Nepali voice [1]. There are many efficient
+uses of gender detection through voice. The initial step in any voice classification system is to
+give an input by speaking a word or a phrase into a microphone by speaker. Then an analog to
+digital converter converts the electrical signal into digitized form and store it in the memory.
+The computer then attempts to determine the meaning of a voice sample by matching it with a
+template that has a known meaning. [2]. The Mel Frequency Cepstral Coefficients (MFCCs)
+of a audio signal are a small set of features which concisely describe the overall shape of a
+cepstral envelope. MFCCs are commonly used as features in speech recognition systems such
+as the systems which can automatically recognize numbers spoken into a telephone and also
+used in music information retrieval applications such as genre classification, audio similarity
+measures etc. [3]. A Gaussian mixture model is a probabilistic model that assumes all the data
+points are generated from a mixture of a finite number of Gaussian distributions with unknown
+parameters. It is a universally used model for generative unsupervised learning or clustering. It
+is also called Expectation Maximization Clustering or EM Clustering and is based on the
+optimization strategy. Gaussian Mixture models are used for representing Normally
+Distributed subpopulations within an overall population. The advantage of Mixture models is
+that they do not require which subpopulation a data point belongs to. It allows the model to
+learn the subpopulations automatically. This constitutes a form of unsupervised learning.
+This project is about how Artificial Intelligence (AI) can be used to classify the different age
+group using speech signal. In this project we propose to use linear predictive coding (LPC) and
+Mel Frequency Cepstral Coefficient (MFCC) for feature extraction. And we propose to use
+support vector machine (SVM), Recurrent Neural Network (RNN) and Convolution Neural
+Network (CNN) for age classification purpose. We propose to define 4 age groups of Nepali
+speakers. Furthermore, we use this model in recommendation system.vThe emerging growth of technology and the increasing computational power of computer
+systems have given rise to the ever-growing dream of Artificial Intelligence to reality. This
+project is about how Artificial Intelligence (AI) can used to simplify the work of content
+presenter. The technology works closely with speech/voice recognition and text recognition
+engines. Voice recognition technology is the most potential technology that will make our daily
+lives more secure. It is one of the types of biometrics that is used to identify and authenticate
+user on the basis of his/her voice. Nowadays, automatic gender classification is playing a vital
+role in many ways in many fields. Gender of a person plays a significant role in our day-to-day
+interactions with computers and society. As gender possesses distinguished information
+concerning social activities, automatic gender classification is receiving increasing attention.
+Most of these voice detection systems detect voice by reading word sequencing. This project
+makes a voice classification application based on wave frequency of a person voice. This
+application can automatically detect the gender using Nepali voice [1]. There are many efficient
+uses of gender detection through voice. The initial step in any voice classification system is to
+give an input by speaking a word or a phrase into a microphone by speaker. Then an analog to
+digital converter converts the electrical signal into digitized form and store it in the memory.
+The computer then attempts to determine the meaning of a voice sample by matching it with a
+template that has a known meaning. [2]. The Mel Frequency Cepstral Coefficients (MFCCs)
+of a audio signal are a small set of features which concisely describe the overall shape of a
+cepstral envelope. MFCCs are commonly used as features in speech recognition systems such
+as the systems which can automatically recognize numbers spoken into a telephone and also
+used in music information retrieval applications such as genre classification, audio similarity
+measures etc. [3]. A Gaussian mixture model is a probabilistic model that assumes all the data
+points are generated from a mixture of a finite number of Gaussian distributions with unknown
+parameters. It is a universally used model for generative unsupervised learning or clustering. It
+is also called Expectation Maximization Clustering or EM Clustering and is based on the
+optimization strategy. Gaussian Mixture models are used for representing Normally
+Distributed subpopulations within an overall population. The advantage of Mixture models is
+that they do not require which subpopulation a data point belongs to. It allows the model to
+learn the subpopulations automatically. This constitutes a form of unsupervised learning.
+This project is about how Artificial Intelligence (AI) can be used to classify the different age
+group using speech signal. In this project we propose to use linear predictive coding (LPC) and
+Mel Frequency Cepstral Coefficient (MFCC) for feature extraction. And we propose to use
+support vector machine (SVM), Recurrent Neural Network (RNN) and Convolution Neural
+Network (CNN) for age classification purpose. We propose to define 4 age groups of Nepali
+speakers. Furthermore, we use this model in recommendation system.}
+
+
+\subsection{Motivation}
+{With rapid technological advancement, artificial intelligence and deep learning are to reach
+their peak. Almost every domain today are under the influence of machine learning and artificial intelligence. Utilizing the same opportunity to extend its use we create the system that will make
+use of the knowledge to create the system that is capable of predicting gender and age group. Today gender identification and age group prediction are used in different application. Furthermore, with the availability of sufficient data and processing power we can improve the efficiency of this system.}
+\subsection{Problem Statement}
+{There are very tiny numbers of datasets for Nepali voice and text processing. As compared to
+foreign language there have been very less amount of work done in Natural language
+processing in Nepali Language. Likewise, it become very challenging to collect Nepali voice
+corpus and there is limited number of resources. Nepal is in its initial phase of Artificial
+Intelligence so it is very challenging to work in this field. One of the main challenges of
+Artificial Intelligence in developing countries like Nepal is lack of Computation Speed.
+Machine Learning and Deep Learning are the stepping stones of Artificial Intelligence and they
+demand on ever-increasing number of cores and GPUs to work efficiently.There are very tiny numbers of datasets for Nepali voice and text processing. As compared to
+foreign language there have been very less amount of work done in Natural language
+processing in Nepali Language. Likewise, it become very challenging to collect Nepali voice
+corpus and there is limited number of resources. Nepal is in its initial phase of Artificial
+Intelligence so it is very challenging to work in this field. One of the main challenges of
+Artificial Intelligence in developing countries like Nepal is lack of Computation Speed.
+Machine Learning and Deep Learning are the stepping stones of Artificial Intelligence and they
+demand on ever-increasing number of cores and GPUs to work efficiently.}
+
+\subsection{Objective}
+{The main aim of this project is to make a system that predicts gender and age group.}
+
+\subsection{Application}
+{The major application of this project is:
+\begin{itemize}
+    \item Recommendation system
+    \item Speech reading
+\end{itemize}
+}
+\pagebreak
+
+\begin{center}
+    \section*{Chapter 2 \\ LITERATURE REVIEW}
+\end{center}
+{In 2017, researchers Sercan Arik, Gregory Diamos, Andrew Gibiansky, John Miller, Kainan
+Peng, Wei Ping, Jonathan Raiman, Yanqi Zhou introduced a technique name Deep Deep Voice
+2: Multi-Speaker Neural Text-to-Speech for augmenting neural text-to-speech (TTS) with
+lowdimensional trainable speaker embeddings to generate different voices from a single model.
+As a starting point, we show improvements over the two state-ofthe-art approaches for single-
+speaker neural TTS: Deep Voice 1 and Tacotron. We introduce Deep Voice 2, which is based
+on a similar pipeline with Deep Voice 1, but constructed with higher performance building
+blocks and demonstrates a significant audio quality improvement over Deep Voice 1. We
+improve Tacotron by introducing a post-processing neural vocoder, and demonstrate a
+significant audio quality improvement. We then demonstrate our technique for multi-speaker
+speech synthesis for both Deep Voice 2 and Tacotron on two multi-speaker TTS datasets. We
+show that a single neural TTS system can learn hundreds of unique voices from less than half
+an hour of data per speaker, while achieving high audio quality synthesis and preserving the
+speaker identities almost perfectly.
+In 2019, a master’s student from Université de Liège, Liège, Belgique, Corentin Jemine
+published a thesis named Real-Time Voice Cloning that allows to clone a voice unseen during
+training from only a few seconds of reference speech, and without retraining the model. He
+adapted the framework with a newer vocoder model, so as to make it run in real-time.[7]
+A number of research works have been done to identify gender from a voice. So, classification
+of gender using speech is not a new thing in the field of machine learning. A new system using
+Bootstrapping on the identification of speech was introduced in which the model detects gender
+from voice. This system used different machine learning algorithms such as Neural Network,
+k Nearest Neighbors (KNN), Logistic Regression, Naive Bayes, Decision Trees and SVM
+Classifiers which shows more than 90\% performance [8]. Another system which is a
+combination of neural networks which is content based multimedia indexing segments and
+piece wise GMM and every segment duration being one second. This showed 90\% accuracy
+for different channel and language [9]. Likewise in 2019, Gender Classification Through Voice
+and Performance Analysis by using Machine Learning Algorithms uses different machine
+learning algorithms such as KNN, SVM, Naïve Bayes, Random Forest, and Decision Tree for
+gender classification [10]. Another model found which gave 90\% accurate output and had used
+multimedia indexing of voices channel in 2007 for voice classification [11]. An SVM is used
+on discriminative weight training to detect gender. This algorithm consists a finest weighted
+Mel frequency Cepstral Coefficient (MFCC) which uses Minimum Classification Error as a
+basis and results a gender decision rule [12]. Since the decision space is less in the problems
+involving gender classification, SVM models perform well in such problems involving smaller
+decision spaces [13]. Another SVM introduced in 2008, generates nearly 100\% accurate results
+[14]. A model which used GMM for 2 stage classifiers for better accurate output and less
+complexity with more than 95\% accurate result [15]. Similarly, in 2015, Speaker Identification
+Using GMM with MFCC also tested against the specified objectives of the proposed system
+with an accuracy of 87.5\% [16]. In 2019, research was done to identify gender using Bengali voice which used three different algorithms for their comparative study. In this method, the
+Gradient Boosting algorithm gave an accuracy of 99.13\% and by the Random Forest method,
+the accuracy was 98.25\% likewise by the Logistic Regression method the accuracy was 91.62\%
+[17]. 3 More likely, it seems that the gender classification research is done in different
+languages. In the Nepali Language, there is no previous research done on Gender Classification
+by using voice.
+A paper published by University of Essex, UK named “Age Estimation based on speech
+Features and support vector machine” used different feature extraction techniques like MFCC
+and PLP to generate feature from speech signal and used SVM algorithm to classify the age
+group. Similarly, a paper named “Age group classification and gender recognition from speech
+with temporal convolutional neural networks”. This paper analyzed the performance of
+different types of Deep Neural Networks to jointly estimate the age and identify gender from
+speech. Here according to the results the system achieved the gender identification error of less
+than 2\% and a classification error by age group of less than 20\%.}
+
+
+\end{document}
