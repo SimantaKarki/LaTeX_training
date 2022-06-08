@@ -6,7 +6,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\graphicspath{{images/}}
+\graphicspath{{images/}} 
 \usepackage{parskip}
 \usepackage{fancyhdr}
 \usepackage{vmargin}
@@ -229,6 +229,75 @@ with temporal convolutional neural networks”. This paper analyzed the performa
 different types of Deep Neural Networks to jointly estimate the age and identify gender from
 speech. Here according to the results the system achieved the gender identification error of less
 than 2\% and a classification error by age group of less than 20\%.}
+
+\section{Methodology}
+\end{large}
+\end{center}
+Thus, far we identified the gender using Nepali voice signal and made text to speech model where a Nepali text is converted to speech according to gender. We have choose a Deep Neural Network(DNN) as the model due to their success in exploiting large quantities of data without overtraining and their multilevel representation. As the dataset is composed of temporal sequences of speech, to avoid stacking audio frames as the inputs and because RNNs are prone to gradient vanishing and fail to learn when time deltas exceed more than 5-10 time steps, we've chosen the Long Short-Term Memory(or LSTM) architecture.For the purpose of evaluating the resulting models a train/validation split was made on the dataset with 80\% of the samples for the training of the models and 20\% for the validation. Both the training and the validation sets were normalized to have zero mean and unit standard deviation. Each model was optimized mini-batch-wise with a mini-batch size of 128 samples.
+\subsection{Dataset}
+{For this project we've used google's open source dataset, self collected data from youtube and Mozilla Common Voice Dataset, namely,the English dataset for age classification.The age dataset contains 250,000 samples labeled from teens to eighties, in tens of years increments. For the training/validation of the age model 71,000 samples were taken,split into 6 classes (teens, twenties, thirties, fourties, fifties and sixties).
+}
+\begin{figure}
+    \centering
+    \includegraphics{initial_age_dataset.png}
+    \caption{Age dataset}
+    \label{fig:my_label}
+\end{figure}
+\subsection{Data Processing}
+{The audio preprocessing part and feature extraction was done using librosa. Starting with the original audio, we've loaded it using librosa with a sample rate of 44.1k, converting the signal to mono.}
+\begin{figure}
+    \centering
+    \includegraphics[width=15cm]{initial_loaded_audio.png}
+    \caption{Initial audio sample}
+    \label{fig:my_label}
+\end{figure}
+{After loading the audio, we've done some preprocess to it, removing the background noise and the silence fragments from the audio.
+This was done in two steps: * apply a thresholding approach for the whole audio (silence <= 18db) * apply a thresholding approach for the leading and trailing parts of the audio signal (silence <= 10db).With orange are the harmonics of the audio, the melody part, and with green are the percussive parts of the audio.}
+\subsection{Feature Extraction}
+{
+We've chosen to extract from each audio file 41 features (13 MFCCs, 13 delta-MFCCs, 13 delta-delta-MFCCs, 1 pitch-estimate, 1 magnitude vector). We've chosen 13 as the number of MFCC due to its popularity in the literature.MFCCs, delta-MFCCs and delta-delta-MFCCs:}
+\begin{figure}
+    \centering
+    \includegraphics[width=16cm]{mfcc_and_deltas_for_audio.png}
+    \caption{MFCCs, delta-MFCCs and delta-delta-MFCCs}
+    \label{fig:my_label}
+\end{figure}
+{Pitches and magnitudes were extracted from the audio sample using librosa, then the maximum of those values were extracted, and then a smooth function was applied (Hann function) over the pitches with a window of 10ms.}
+\begin{figure}
+    \centering
+    \includegraphics[width=16cm]{audio_pitches.png}
+    \caption{audio pitches}
+    \label{fig:my_label}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=16cm]{audio_magnitudes.png}
+    \caption{audio magnitudes}
+    \label{fig:my_label}
+\end{figure}
+\subsection{Model Training}
+We've chose a DNN as the model due to their success in exploiting large quantities of data without overtraining and their multilevel representation. As the dataset is composed of temporal sequences of speech, to avoid stacking audio frames as the inputs and because RNNs are prone to gradient vanishing and fail to learn when time deltas exceed more than 5-10 time steps, we've chosen the Long Short-Term Memory(or LSTM) architecture.For the purpose of evaluating the resulting models a train/validation split was made on the dataset with 80\% of the samples for the training of the models and 20\% for the validation. Both the training and the validation sets were normalized to have zero mean and unit standard deviation. Each model was optimized mini-batch-wise with a mini-batch size of 128 samples.
+\begin{figure}
+    \centering
+    \includegraphics{lstm.jpeg}
+    \caption{LSTM}
+    \label{fig:my_label}
+\end{figure}
+\pagebreak
+\begin{center}
+\chapter{\textbf{Chapter 5}}
+    \section{Result and Discussion}
+\end{center}
+\subsection{Workdone}
+\pagebreak
+\subsection{Work to be done }
+\pagebreak
+\begin{center}
+   \section*{References}
+\cite{thapa2020detecting} 
+\end{center}
+
+\end{document}
 
 
 \end{document}
